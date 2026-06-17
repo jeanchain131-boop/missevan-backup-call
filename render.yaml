@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: missevan-backup-call
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PROXY_TOKEN
+        sync: false
+      - key: MISSEVAN_UPSTREAM_ORIGIN
+        value: "https://www.missevan.com"
+      - key: UPSTREAM_TIMEOUT_MS
+        value: "10000"
